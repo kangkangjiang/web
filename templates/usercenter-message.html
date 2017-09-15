@@ -1,0 +1,52 @@
+{% extends 'usercenter-base.html' %}
+{% load staticfiles %}
+{% block title %}我的消息{% endblock %}
+{% block custom %}我的课程{% endblock %}
+{% block content%}
+    <div class="right" >
+		<div class="personal_des Releasecont">
+			<div class="head">
+				<h1>我的消息</h1>
+			</div>
+
+		</div>
+		<div class="personal_des permessage">
+			<div class="head">
+				<ul class="tab_header messagehead">
+					<li class="active"><a href="/user/message/">个人消息</a> </li>
+				</ul>
+
+
+			</div>
+			<div class="messagelist">
+            {% for message in all_message.object_list %}
+                    <div class="messages">
+                        <div class="fr">
+                            <div class="top"><span class="fl time">{{ message.add_time }}</span><span class="fr btn foldbtn"></span></div>
+                            <p>
+                                {{ message.message }}
+                            </p>
+                        </div>
+                    </div>
+            {% endfor%}
+
+
+
+			</div>
+
+			<div class="pageturn pagerright">
+                <ul class="pagelist">
+
+                            <li class="active"><a href="?page=1">1</a></li>
+
+
+
+
+
+            </ul>
+            </div>
+		</div>
+
+	</div>
+{% endblock %}
+
